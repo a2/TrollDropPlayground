@@ -18,9 +18,9 @@ namespace :ipad do
     `mkdir -p #{IPAD_TARGET}`
     DEPS.each { |dep| `cp -R #{dep.shellescape} #{IPAD_TARGET}` }
 
-    contents = <<~CONTENTS
-      <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-      <playground version='6.0' target-platform='ios' display-mode='raw'/>
+    contents = <<-CONTENTS
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' display-mode='raw'/>
     CONTENTS
     File.write("#{IPAD_TARGET}/contents.xcplayground", contents)
   end
@@ -44,9 +44,9 @@ namespace :xcode do
     `mkdir -p #{XCODE_TARGET}`
     DEPS.each { |dep| `cp -R #{dep.shellescape} #{XCODE_TARGET}` }
     
-    contents = <<~CONTENTS
-      <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-      <playground version='5.0' target-platform='macos' executeOnSourceChanges='false'/>
+    contents = <<-CONTENTS
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='5.0' target-platform='macos' executeOnSourceChanges='false'/>
     CONTENTS
     File.write("#{XCODE_TARGET}/contents.xcplayground", contents)
   end
